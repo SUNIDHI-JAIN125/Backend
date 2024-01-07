@@ -11,18 +11,18 @@ const router = express.Router();
 
 const { isAuthenticatedUser, authorizedRoles } = require("../middleware/auth");
 
-router.route("/order/new").post(isAuthenticatedUser, newOrder);
+router.route("/order/new").post( newOrder);
 
-router.route("/order/:id").get(isAuthenticatedUser, getSingleOrder);
+router.route("/order/:id").get( getSingleOrder);
 
-router.route("/orders/me").get(isAuthenticatedUser, myOrders);
-
-router
-  .route("/admin/orders")
-  .get(isAuthenticatedUser,getAllOrders);
+router.route("/orders/me").get( myOrders);
 
 router
-  .route("/admin/order/:id")
+  .route("/orders")
+  .get(getAllOrders);
+
+router
+  .route("/order/:id")
   .put(isAuthenticatedUser, updateOrder)
   .delete(isAuthenticatedUser,deleteOrder);
 
