@@ -8,8 +8,6 @@ const {
 } = require("../controllers/orderController");
 const router = express.Router();
 
-const { isAuthenticatedUser, authorizedRoles } = require("../middleware/auth");
-
 router.route("/order/new").post( newOrder);
 
 router.route("/order/:id").get( getSingleOrder);
@@ -21,7 +19,7 @@ router
   .get(getAllOrders);
 
 router
-  .route("/order/:id")
+  .route("admin/order/:id")
   .put( updateOrder)
   .delete(deleteOrder);
 
