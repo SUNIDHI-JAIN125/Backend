@@ -19,7 +19,7 @@ router
   .get(getAllOrders);
 
 router
-  .route("admin/order/:id")
+  .route("/order/:id")
   .put( updateOrder)
   .delete(deleteOrder);
 
