@@ -23,7 +23,7 @@ router
 
 router
   .route("/order/:id")
-  .put(isAuthenticatedUser, updateOrder)
-  .delete(isAuthenticatedUser,deleteOrder);
+  .put( updateOrder)
+  .delete(deleteOrder);
 
 module.exports = router;
